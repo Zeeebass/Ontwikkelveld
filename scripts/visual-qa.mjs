@@ -15,7 +15,7 @@ async function login(page, loginName) {
   await page.goto(baseURL)
   await page.getByLabel('Loginnaam').fill(loginName)
   await page.getByLabel('Wachtwoord', { exact: true }).fill('demo')
-  await page.getByRole('button', { name: 'Naar Marpunten' }).click()
+  await page.getByRole('button', { name: 'Naar Ontwikkelveld' }).click()
   await page.waitForTimeout(300)
 }
 

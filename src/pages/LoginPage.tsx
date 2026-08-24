@@ -54,7 +54,7 @@ export function LoginPage() {
             <label className="field-label">Loginnaam<input autoComplete="username" autoCapitalize="none" {...register('loginName')} aria-invalid={Boolean(errors.loginName)} />{errors.loginName && <span className="field-error">{errors.loginName.message}</span>}</label>
             <div className="field-label"><label htmlFor="login-password">Wachtwoord</label><span className="password-field"><input id="login-password" type={showPassword ? 'text' : 'password'} autoComplete="current-password" {...register('password')} aria-invalid={Boolean(errors.password)} /><button type="button" onClick={() => setShowPassword((value) => !value)} aria-label={showPassword ? 'Wachtwoord verbergen' : 'Wachtwoord tonen'}>{showPassword ? <EyeOff /> : <Eye />}</button></span>{errors.password && <span className="field-error">{errors.password.message}</span>}</div>
             {submitError && <div className="notice notice--error" role="alert">{submitError}</div>}
-            <button className="button button--primary button--wide" type="submit" disabled={isSubmitting || (!hasSupabaseConfig && !isDemoMode)}>{isSubmitting ? 'Bezig met inloggen…' : <>Naar Marpunten <ArrowRight aria-hidden="true" /></>}</button>
+            <button className="button button--primary button--wide" type="submit" disabled={isSubmitting || (!hasSupabaseConfig && !isDemoMode)}>{isSubmitting ? 'Bezig met inloggen…' : <>Naar Ontwikkelveld <ArrowRight aria-hidden="true" /></>}</button>
           </form>
           <p className="login-help">Wachtwoord kwijt? Vraag je trainer om een nieuwe code.</p>
         </div>

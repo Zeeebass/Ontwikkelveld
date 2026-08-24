@@ -17,7 +17,7 @@ React, TypeScript en Vite voor de statische frontend; Supabase Auth, PostgreSQL,
 
 ## Product Purpose
 
-Marpunten maakt persoonlijke voetbalontwikkeling zichtbaar en geeft trainers een eenvoudige centrale plek om progressie, leeritems en relevante media per speler te beheren. De MVP is geslaagd wanneer een trainer de volledige cyclus van speler toevoegen tot persoonlijke content delen zelfstandig kan uitvoeren en spelers die omgeving daadwerkelijk gebruiken.
+Ontwikkelveld maakt persoonlijke voetbalontwikkeling zichtbaar en geeft trainers een eenvoudige centrale plek om progressie, leeritems en relevante media per speler te beheren. De MVP is geslaagd wanneer een trainer de volledige cyclus van speler toevoegen tot persoonlijke content delen zelfstandig kan uitvoeren en spelers die omgeving daadwerkelijk gebruiken.
 
 ## Positioning
 
@@ -40,7 +40,7 @@ Eén voetbalteam gebruikt de website gedurende vrij benoembare trainings- of com
 
 ## Brand Commitments
 
-De productnaam is Marpunten. De interface is Nederlandstalig en voelt als een professionele voetbalacademie: tactisch, helder en motiverend. Die uitstraling mag nooit suggereren dat Groeiwaarde bepaalt wie de beste speler is.
+De productnaam is Ontwikkelveld. De interface is Nederlandstalig en voelt als een professionele voetbalacademie: tactisch, helder en motiverend. Die uitstraling mag nooit suggereren dat Groeiwaarde bepaalt wie de beste speler is.
 
 ## Evidence on Hand
 

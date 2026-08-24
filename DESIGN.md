@@ -1,5 +1,5 @@
 ---
-name: Marpunten
+name: Ontwikkelveld
 description: Een geannoteerd coachwedstrijdvel voor persoonlijke voetbalontwikkeling.
 colors:
   ink: "#101a15"
@@ -117,13 +117,13 @@ components:
     padding: "26px"
 ---
 
-# Design System: Marpunten
+# Design System: Ontwikkelveld
 
 ## Overview
 
 **Creative North Star: "The Analyst's Annotated Match Sheet"**
 
-Marpunten voelt als het wedstrijdvel waarop een trainer patronen aanwijst, groei noteert en de volgende actie klaarzet. Donker inktgroen geeft richting en autoriteit; warm krijtpapier houdt de werkomgeving menselijk; dunne regels, veldgeometrie en compacte scoretypografie maken de interface tactisch zonder decoratief voetbaltheater.
+Ontwikkelveld voelt als het wedstrijdvel waarop een trainer patronen aanwijst, groei noteert en de volgende actie klaarzet. Donker inktgroen geeft richting en autoriteit; warm krijtpapier houdt de werkomgeving menselijk; dunne regels, veldgeometrie en compacte scoretypografie maken de interface tactisch zonder decoratief voetbaltheater.
 
 De density is bewust geaard (grounded index 6): royaal rond het ene belangrijke periode- of groeisignaal, compact waar een coach lijsten scant of corrigeert. Het systeem weigert een generiek SaaS-dashboard, competitie-esthetiek en glanzende gamification; Groeiwaarde blijft een persoonlijk ontwikkelsignaal, nooit een ranglijst.
 
@@ -272,7 +272,7 @@ Lege toestanden gebruiken een gestippelde omranding op transparant Chalk; fouten
 
 ### Don't:
 
-- **Don't** verander Marpunten in een generiek SaaS-dashboard met zwevende witte kaarten, blauwe accenten of KPI-tegels.
+- **Don't** verander Ontwikkelveld in een generiek SaaS-dashboard met zwevende witte kaarten, blauwe accenten of KPI-tegels.
 - **Don't** gebruik geel als decoratie, merkaccent of gewone CTA-kleur.
 - **Don't** voeg decoratieve kleurgradients, glans, zware schaduwen of nagebootste papiertextuur toe; subtiele lijn- en veldgrids blijven functioneel.
 - **Don't** maak Groeiwaarde tot een badge, sterrenscore, podium of visuele ranglijst.

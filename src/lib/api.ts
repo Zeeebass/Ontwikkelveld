@@ -118,7 +118,7 @@ export async function getMyContext(): Promise<UserContext> {
   const { data, error } = await requireSupabase().rpc('get_my_context')
   if (error) throw error
   const row = (data?.[0] ?? null) as LooseRow | null
-  if (!row) throw new Error('Er is geen Marpunten-profiel aan dit account gekoppeld.')
+  if (!row) throw new Error('Er is geen Ontwikkelveld-profiel aan dit account gekoppeld.')
   return {
     role: row.role === 'admin' ? 'admin' : 'player',
     playerId: row.player_id ? String(row.player_id) : null,

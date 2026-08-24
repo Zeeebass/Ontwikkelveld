@@ -12,7 +12,7 @@ export function MediaCard({ item }: { item: PlayerMedia }) {
         <div className={`media-item__embed media-item__embed--${videoState}`}>
           <div className="media-item__video-state" aria-live="polite">
             <span className="media-item__video-mark"><Play aria-hidden="true" /></span>
-            <span>{videoState === 'error' ? 'Video niet geladen' : videoState === 'loading' ? 'Video wordt geladen' : 'Marpunten video'}</span>
+            <span>{videoState === 'error' ? 'Video niet geladen' : videoState === 'loading' ? 'Video wordt geladen' : 'Ontwikkelveld video'}</span>
           </div>
           <iframe
             src={embedUrl}

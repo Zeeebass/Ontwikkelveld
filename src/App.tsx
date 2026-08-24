@@ -15,7 +15,7 @@ import type { AppRole } from './types/app'
 
 function ProtectedShell() {
   const { user, loading } = useAuth()
-  if (loading) return <div className="app-loader"><LoadingState label="Marpunten gereedmaken…" /></div>
+  if (loading) return <div className="app-loader"><LoadingState label="Ontwikkelveld gereedmaken…" /></div>
   if (!user) return <Navigate to="/login" replace />
   if (!user.active) return <Navigate to="/login" replace />
   return <AppShell />

@@ -61,7 +61,7 @@ let media: PlayerMedia[] = [
 ]
 
 export function demoContext(loginName = localStorage.getItem('marpunten-demo-user') ?? 'coach'): UserContext {
-  if (loginName === 'coach') return { role: 'admin', playerId: null, fullName: 'Coach Marpunten', active: true }
+  if (loginName === 'coach') return { role: 'admin', playerId: null, fullName: 'Coach Ontwikkelveld', active: true }
   return { role: 'player', playerId: ids.p1, fullName: 'Daan de Jong', active: true }
 }
 

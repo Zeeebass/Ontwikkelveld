@@ -1,6 +1,6 @@
-# Marpunten
+# Ontwikkelveld
 
-Marpunten is een Nederlandstalige teamomgeving voor persoonlijke voetbalontwikkeling. Trainers beheren spelers, perioden, Groeiwaarde, leeritems en media; spelers zien het teamoverzicht en uitsluitend hun eigen coachingcontent.
+Ontwikkelveld is een Nederlandstalige teamomgeving voor persoonlijke voetbalontwikkeling. Trainers beheren spelers, perioden, Groeiwaarde, leeritems en media; spelers zien het teamoverzicht en uitsluitend hun eigen coachingcontent.
 
 ## Lokaal starten
 
@@ -43,7 +43,7 @@ Maak in Supabase Authentication handmatig een bevestigde gebruiker met het techn
 
 ```sql
 insert into public.profiles (id, login_name, first_name, last_name, role)
-values ('AUTH-USER-UUID', 'coach', 'Coach', 'Marpunten', 'admin');
+values ('AUTH-USER-UUID', 'coach', 'Coach', 'Ontwikkelveld', 'admin');
 ```
 
 De beheerder logt in de website in met `coach` en het gekozen wachtwoord. Spelersaccounts worden daarna uitsluitend via de adminomgeving en de beveiligde Edge Function gemaakt.
