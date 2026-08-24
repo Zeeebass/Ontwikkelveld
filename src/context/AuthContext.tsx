@@ -33,7 +33,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const initialize = async () => {
       try {
         if (isDemoMode) {
-          if (localStorage.getItem('marpunten-demo-user')) await refreshContext()
+          if (localStorage.getItem('ontwikkelveld-demo-user')) await refreshContext()
           return
         }
         if (!supabase) return
@@ -60,7 +60,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     try {
       if (isDemoMode) {
         const demoUser = loginName.trim().toLowerCase() === 'coach' ? 'coach' : 'daan8'
-        localStorage.setItem('marpunten-demo-user', demoUser)
+        localStorage.setItem('ontwikkelveld-demo-user', demoUser)
       } else {
         const { error: signInError } = await requireSupabase().auth.signInWithPassword({ email: toAuthEmail(loginName), password })
         if (signInError) throw new Error('Loginnaam of wachtwoord klopt niet.')
@@ -80,7 +80,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [])
 
   const signOut = useCallback(async () => {
-    if (isDemoMode) localStorage.removeItem('marpunten-demo-user')
+    if (isDemoMode) localStorage.removeItem('ontwikkelveld-demo-user')
     else await requireSupabase().auth.signOut()
     setUser(null)
   }, [])

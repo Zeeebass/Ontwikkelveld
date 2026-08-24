@@ -11,7 +11,7 @@ insert into auth.users (
   ('f0000000-0000-4000-8000-000000000001', 'authenticated', 'authenticated', 'inactief@marpunten.invalid', '', now(), '{}', '{}', now(), now());
 
 insert into public.profiles (id, login_name, first_name, last_name, role) values
-  ('a0000000-0000-4000-8000-000000000001', 'coach', 'Coach', 'Marpunten', 'admin'),
+  ('a0000000-0000-4000-8000-000000000001', 'coach', 'Coach', 'Ontwikkelveld', 'admin'),
   ('d0000000-0000-4000-8000-000000000001', 'daan8', 'Daan', 'de Jong', 'player'),
   ('e0000000-0000-4000-8000-000000000001', 'sem11', 'Sem', 'Vos', 'player'),
   ('f0000000-0000-4000-8000-000000000001', 'inactief', 'Inez', 'Bakker', 'player');

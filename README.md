@@ -41,6 +41,8 @@ npx supabase secrets set APP_ORIGINS=https://GITHUB_GEBRUIKER.github.io
 
 Maak in Supabase Authentication handmatig een bevestigde gebruiker met het technische e-mailadres `coach@marpunten.invalid` en een sterk wachtwoord. Kopieer daarna de UUID van die Auth-user en voer in de SQL Editor uit:
 
+De technische `marpunten.invalid`-authdomain blijft voor bestaande accounts bewust ongewijzigd; deze is nergens zichtbaar als productnaam.
+
 ```sql
 insert into public.profiles (id, login_name, first_name, last_name, role)
 values ('AUTH-USER-UUID', 'coach', 'Coach', 'Ontwikkelveld', 'admin');

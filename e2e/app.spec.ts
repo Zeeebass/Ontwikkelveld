@@ -27,7 +27,7 @@ test('admin kan een leeritem omzetten naar progressie', async ({ page }) => {
   await page.getByLabel('Loginnaam').fill('coach')
   await page.getByLabel('Wachtwoord', { exact: true }).fill('demo')
   await page.getByRole('button', { name: 'Naar Ontwikkelveld' }).click()
-  await page.getByRole('link', { name: 'Spelers' }).click()
+  await page.getByRole('link', { name: 'Spelers', exact: true }).click()
   await page.getByRole('article').filter({ hasText: 'Daan de Jong' }).getByRole('link', { name: 'Beheren' }).click()
 
   const learningItem = page.getByRole('heading', { name: 'Waar kijk je voordat je de bal ontvangt?' })

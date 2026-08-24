@@ -60,7 +60,7 @@ let media: PlayerMedia[] = [
   { id: '60000000-0000-4000-8000-000000000002', playerId: ids.p1, periodId: null, periodName: null, title: 'Persoonlijke wedstrijdnotities', description: 'Open het gedeelde materiaal voor de volgende training.', url: 'https://example.com', mediaType: 'link', sortOrder: 2, createdAt: now },
 ]
 
-export function demoContext(loginName = localStorage.getItem('marpunten-demo-user') ?? 'coach'): UserContext {
+export function demoContext(loginName = localStorage.getItem('ontwikkelveld-demo-user') ?? 'coach'): UserContext {
   if (loginName === 'coach') return { role: 'admin', playerId: null, fullName: 'Coach Ontwikkelveld', active: true }
   return { role: 'player', playerId: ids.p1, fullName: 'Daan de Jong', active: true }
 }
