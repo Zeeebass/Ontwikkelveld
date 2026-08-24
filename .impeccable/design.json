@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-24T13:11:25.0033444Z",
+  "title": "Design System: Marpunten",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "neutral",
+        "displayName": "Coach Ink",
+        "tonalRamp": ["oklch(15% 0.018 162.6)", "oklch(27% 0.018 162.6)", "oklch(39% 0.018 162.6)", "oklch(51% 0.018 162.6)", "oklch(63% 0.018 162.6)", "oklch(75% 0.018 162.6)", "oklch(87% 0.018 162.6)", "oklch(95% 0.018 162.6)"]
+      },
+      "ink-raised": {
+        "role": "neutral",
+        "displayName": "Raised Ink",
+        "tonalRamp": ["oklch(15% 0.025 160.6)", "oklch(27% 0.025 160.6)", "oklch(39% 0.025 160.6)", "oklch(51% 0.025 160.6)", "oklch(63% 0.025 160.6)", "oklch(75% 0.025 160.6)", "oklch(87% 0.025 160.6)", "oklch(95% 0.025 160.6)"]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Soft Ink",
+        "tonalRamp": ["oklch(15% 0.032 159.8)", "oklch(27% 0.032 159.8)", "oklch(39% 0.032 159.8)", "oklch(51% 0.032 159.8)", "oklch(63% 0.032 159.8)", "oklch(75% 0.032 159.8)", "oklch(87% 0.032 159.8)", "oklch(95% 0.032 159.8)"]
+      },
+      "pitch": {
+        "role": "secondary",
+        "displayName": "Training Pitch",
+        "tonalRamp": ["oklch(15% 0.095 155.0)", "oklch(27% 0.095 155.0)", "oklch(39% 0.095 155.0)", "oklch(51% 0.095 155.0)", "oklch(63% 0.095 155.0)", "oklch(75% 0.095 155.0)", "oklch(87% 0.095 155.0)", "oklch(95% 0.095 155.0)"]
+      },
+      "green": {
+        "role": "primary",
+        "displayName": "Action Green",
+        "tonalRamp": ["oklch(15% 0.179 153.2)", "oklch(27% 0.179 153.2)", "oklch(39% 0.179 153.2)", "oklch(51% 0.179 153.2)", "oklch(63% 0.179 153.2)", "oklch(75% 0.179 153.2)", "oklch(87% 0.179 153.2)", "oklch(95% 0.179 153.2)"]
+      },
+      "green-dark": {
+        "role": "primary",
+        "displayName": "Deep Action Green",
+        "tonalRamp": ["oklch(15% 0.125 153.9)", "oklch(27% 0.125 153.9)", "oklch(39% 0.125 153.9)", "oklch(51% 0.125 153.9)", "oklch(63% 0.125 153.9)", "oklch(75% 0.125 153.9)", "oklch(87% 0.125 153.9)", "oklch(95% 0.125 153.9)"]
+      },
+      "chalk": {
+        "role": "neutral",
+        "displayName": "Warm Chalk",
+        "tonalRamp": ["oklch(15% 0.016 91.6)", "oklch(27% 0.016 91.6)", "oklch(39% 0.016 91.6)", "oklch(51% 0.016 91.6)", "oklch(63% 0.016 91.6)", "oklch(75% 0.016 91.6)", "oklch(87% 0.016 91.6)", "oklch(95% 0.016 91.6)"]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Match Paper",
+        "tonalRamp": ["oklch(15% 0.011 95.2)", "oklch(27% 0.011 95.2)", "oklch(39% 0.011 95.2)", "oklch(51% 0.011 95.2)", "oklch(63% 0.011 95.2)", "oklch(75% 0.011 95.2)", "oklch(87% 0.011 95.2)", "oklch(95% 0.011 95.2)"]
+      },
+      "paper-deep": {
+        "role": "neutral",
+        "displayName": "Deep Match Paper",
+        "tonalRamp": ["oklch(15% 0.021 91.6)", "oklch(27% 0.021 91.6)", "oklch(39% 0.021 91.6)", "oklch(51% 0.021 91.6)", "oklch(63% 0.021 91.6)", "oklch(75% 0.021 91.6)", "oklch(87% 0.021 91.6)", "oklch(95% 0.021 91.6)"]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Tactical Rule",
+        "tonalRamp": ["oklch(15% 0.024 90.8)", "oklch(27% 0.024 90.8)", "oklch(39% 0.024 90.8)", "oklch(51% 0.024 90.8)", "oklch(63% 0.024 90.8)", "oklch(75% 0.024 90.8)", "oklch(87% 0.024 90.8)", "oklch(95% 0.024 90.8)"]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Pencil Note",
+        "tonalRamp": ["oklch(15% 0.018 94.4)", "oklch(27% 0.018 94.4)", "oklch(39% 0.018 94.4)", "oklch(51% 0.018 94.4)", "oklch(63% 0.018 94.4)", "oklch(75% 0.018 94.4)", "oklch(87% 0.018 94.4)", "oklch(95% 0.018 94.4)"]
+      },
+      "field-white": {
+        "role": "neutral",
+        "displayName": "Field White",
+        "tonalRamp": ["oklch(15% 0 0)", "oklch(27% 0 0)", "oklch(39% 0 0)", "oklch(51% 0 0)", "oklch(63% 0 0)", "oklch(75% 0 0)", "oklch(87% 0 0)", "oklch(95% 0 0)"]
+      },
+      "signal-yellow": {
+        "role": "tertiary",
+        "displayName": "Signal Yellow",
+        "tonalRamp": ["oklch(15% 0.146 90.5)", "oklch(27% 0.146 90.5)", "oklch(39% 0.146 90.5)", "oklch(51% 0.146 90.5)", "oklch(63% 0.146 90.5)", "oklch(75% 0.146 90.5)", "oklch(87% 0.146 90.5)", "oklch(95% 0.146 90.5)"]
+      },
+      "danger-red": {
+        "role": "tertiary",
+        "displayName": "Correction Red",
+        "tonalRamp": ["oklch(15% 0.163 25.7)", "oklch(27% 0.163 25.7)", "oklch(39% 0.163 25.7)", "oklch(51% 0.163 25.7)", "oklch(63% 0.163 25.7)", "oklch(75% 0.163 25.7)", "oklch(87% 0.163 25.7)", "oklch(95% 0.163 25.7)"]
+      },
+      "danger-red-soft": {
+        "role": "tertiary",
+        "displayName": "Soft Correction Red",
+        "tonalRamp": ["oklch(15% 0.019 33.4)", "oklch(27% 0.019 33.4)", "oklch(39% 0.019 33.4)", "oklch(51% 0.019 33.4)", "oklch(63% 0.019 33.4)", "oklch(75% 0.019 33.4)", "oklch(87% 0.019 33.4)", "oklch(95% 0.019 33.4)"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Uppercase page titles and the login statement." },
+      "headline": { "displayName": "Headline", "purpose": "Section and status-module headings." },
+      "title": { "displayName": "Title", "purpose": "Rows, content cards, and coaching entries." },
+      "body": { "displayName": "Body", "purpose": "Forms, explanation, and long coaching copy." },
+      "label": { "displayName": "Tactical Label", "purpose": "Table headers, metadata, and compact state language." },
+      "score": { "displayName": "Score", "purpose": "Groeiwaarde and large period signals with tabular numerals." }
+    },
+    "shadows": [
+      { "name": "field-marker", "value": "0 8px 24px rgba(0,0,0,.32)", "purpose": "Only beneath tactical player markers on the login field." },
+      { "name": "field-focus", "value": "0 0 0 3px rgba(8,121,66,.16)", "purpose": "Focused form controls, paired with the dark green focus border." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(.16, 1, .3, 1)", "purpose": "Directional entrances and restrained 1px action lift." },
+      { "name": "state-change", "value": "200ms", "purpose": "Button, link, border, and field state transitions." },
+      { "name": "page-enter", "value": "580ms cubic-bezier(.16, 1, .3, 1)", "purpose": "A small upward page reveal after route changes." },
+      { "name": "editor-enter", "value": "420ms cubic-bezier(.16, 1, .3, 1)", "purpose": "Opening an inline editor above a list." },
+      { "name": "video-state", "value": "240ms ease", "purpose": "Fade between video loading and ready treatments." }
+    ],
+    "breakpoints": [
+      { "name": "wide-list", "value": "1050px" },
+      { "name": "mobile-shell", "value": "900px" },
+      { "name": "stacked-content", "value": "700px" },
+      { "name": "compact-phone", "value": "430px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Marpunten Mark",
+      "kind": "custom",
+      "description": "Inline field-diagram mark paired with the condensed uppercase wordmark.",
+      "html": "<span class=\"ds-brand\" aria-label=\"Marpunten\"><svg class=\"ds-brand__mark\" viewBox=\"0 0 42 42\" aria-hidden=\"true\"><rect x=\"3\" y=\"3\" width=\"36\" height=\"36\" rx=\"7\"/><path d=\"M21 4v34M4 21h34M21 15a6 6 0 1 0 0 12M11 8v26M31 8v26\"/></svg><span class=\"ds-brand__word\">Marpunten</span></span>",
+      "css": ".ds-brand { display: inline-flex; align-items: center; gap: 11px; color: var(--ink); } .ds-brand__mark { width: 37px; height: 37px; fill: none; stroke: currentColor; stroke-width: 1.7; } .ds-brand__word { font-family: var(--display); font-size: 1.65rem; font-weight: 700; letter-spacing: -.02em; text-transform: uppercase; }"
+    },
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The main next coaching or management action in the current context.",
+      "html": "<button class=\"ds-btn-primary\" type=\"button\">Speler toevoegen</button>",
+      "css": ".ds-btn-primary { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; padding: 10px 17px; border: 1px solid transparent; border-radius: 10px; background: var(--green-dark); color: #fff; font-family: var(--body); font-size: 1rem; font-weight: 700; cursor: pointer; transition: background-color .2s, transform .2s var(--ease-out); } .ds-btn-primary:hover { background: #056237; transform: translateY(-1px); } .ds-btn-primary:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; } .ds-btn-primary:active { transform: none; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "A reversible or supporting action on the paper field.",
+      "html": "<button class=\"ds-btn-secondary\" type=\"button\">Profiel bewerken</button>",
+      "css": ".ds-btn-secondary { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; padding: 10px 17px; border: 1px solid #bcb6a6; border-radius: 10px; background: transparent; color: var(--ink); font-family: var(--body); font-size: 1rem; font-weight: 700; cursor: pointer; transition: background-color .2s, border-color .2s, transform .2s var(--ease-out); } .ds-btn-secondary:hover { background: var(--paper-deep); border-color: var(--ink); transform: translateY(-1px); } .ds-btn-secondary:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; } .ds-btn-secondary:active { transform: none; }"
+    },
+    {
+      "name": "Input Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "A plain white writing field on warm paper with an explicit green focus state.",
+      "html": "<label class=\"ds-field\"><span>Loginnaam</span><input type=\"text\" value=\"daan8\" aria-label=\"Loginnaam\"></label>",
+      "css": ".ds-field { display: grid; gap: 7px; color: var(--ink); font-family: var(--body); font-weight: 700; } .ds-field input { width: 100%; min-height: 46px; padding: 10px 12px; border: 1px solid #aaa494; border-radius: 9px; background: #fff; color: var(--ink); font: inherit; font-weight: 400; caret-color: var(--green-dark); transition: border-color .2s, box-shadow .2s; } .ds-field input:hover { border-color: var(--ink); } .ds-field input:focus { outline: 0; border-color: var(--green-dark); box-shadow: 0 0 0 3px rgba(8,121,66,.16); }"
+    },
+    {
+      "name": "Active Navigation Item",
+      "kind": "nav",
+      "refersTo": "nav-active",
+      "description": "The active location in the dark coach rail or mobile bottom bar.",
+      "html": "<a class=\"ds-nav-active\" href=\"#\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><circle cx=\"12\" cy=\"12\" r=\"2\"/><path d=\"M12 3v3M21 12h-3M12 21v-3M3 12h3\"/></svg><span>Mijn groei</span></a>",
+      "css": ".ds-nav-active { min-height: 48px; display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 10px; background: var(--green); color: var(--ink); font-family: var(--body); font-weight: 650; text-decoration: none; } .ds-nav-active svg { width: 19px; height: 19px; stroke-width: 1.8; } .ds-nav-active:hover { background: var(--green); color: var(--ink); } .ds-nav-active:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; } .ds-nav-active:active { transform: translateY(1px); }"
+    },
+    {
+      "name": "Current Period Status",
+      "kind": "chip",
+      "refersTo": "status-current",
+      "description": "Signal yellow is reserved for a period that is current now.",
+      "html": "<span class=\"ds-status-current\"><span aria-hidden=\"true\"></span>Huidig</span>",
+      "css": ".ds-status-current { width: fit-content; display: inline-flex; align-items: center; gap: 6px; padding: 4px 9px; border-radius: 999px; background: var(--yellow); color: var(--ink); font-family: var(--body); font-size: .78rem; font-weight: 750; } .ds-status-current > span { width: 7px; height: 7px; border-radius: 50%; background: var(--ink); }"
+    },
+    {
+      "name": "Growth Value",
+      "kind": "custom",
+      "refersTo": "growth-value",
+      "description": "The signature personal-development signal, set like a calm scoreboard rather than a ranking badge.",
+      "html": "<span class=\"ds-growth\" aria-label=\"vierhonderdtwintigduizend euro Groeiwaarde\">€420K</span>",
+      "css": ".ds-growth { display: inline-block; color: var(--green-dark); font-family: var(--display); font-size: clamp(2rem, 4vw, 3.1rem); font-weight: 700; line-height: .9; letter-spacing: -.025em; font-variant-numeric: tabular-nums; white-space: nowrap; }"
+    },
+    {
+      "name": "Personal Scoreboard",
+      "kind": "card",
+      "description": "The first-viewport growth and period signal on a dark annotated field.",
+      "html": "<section class=\"ds-scoreboard\"><div class=\"ds-scoreboard__main\"><span>Jouw Groeiwaarde</span><strong>€420K</strong></div><div class=\"ds-scoreboard__period\"><span>Huidige periode</span><b>Periode 3</b><small>Techniek & inzicht</small></div></section>",
+      "css": ".ds-scoreboard { position: relative; display: grid; grid-template-columns: 1fr 220px; overflow: hidden; border-radius: 14px; background: var(--ink); color: var(--chalk); font-family: var(--body); } .ds-scoreboard::before { content: ''; position: absolute; width: 320px; height: 320px; right: -90px; top: -170px; border: 1px solid rgba(244,240,228,.18); border-radius: 50%; } .ds-scoreboard__main, .ds-scoreboard__period { position: relative; z-index: 1; display: grid; padding: 30px; } .ds-scoreboard__main { min-height: 210px; align-content: space-between; } .ds-scoreboard__main span, .ds-scoreboard__period span, .ds-scoreboard__period small { color: #b3c6b7; font-weight: 650; } .ds-scoreboard__main strong { color: var(--green); font-family: var(--display); font-size: clamp(3.4rem, 7vw, 5.8rem); line-height: .9; letter-spacing: -.025em; font-variant-numeric: tabular-nums; } .ds-scoreboard__period { align-content: center; border-left: 1px solid rgba(244,240,228,.2); } .ds-scoreboard__period b { font-family: var(--display); font-size: 2rem; } @media (max-width: 520px) { .ds-scoreboard { grid-template-columns: 1fr; } .ds-scoreboard__period { border-top: 1px solid rgba(244,240,228,.2); border-left: 0; } }"
+    },
+    {
+      "name": "Annotated Question",
+      "kind": "card",
+      "description": "A coaching prompt separated by rules, with its answer opening as a soft green note.",
+      "html": "<article class=\"ds-question\"><div class=\"ds-question__meta\"><span>Tactisch</span><span>Periode 3</span></div><h3>Waar ligt de vrije ruimte na balverovering?</h3><button type=\"button\">Bekijk antwoord</button><div class=\"ds-question__answer\"><p>Kijk eerst over je schouder en speel vooruit zodra de lijn openvalt.</p></div></article>",
+      "css": ".ds-question { padding: 25px 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); color: var(--ink); font-family: var(--body); } .ds-question__meta { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-bottom: 9px; color: var(--muted); font-size: .78rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; } .ds-question h3 { max-width: 65ch; margin: 0 0 6px; font-family: var(--display); font-size: 1.55rem; line-height: .98; } .ds-question button { padding: 5px 0; border: 0; background: none; color: var(--green-dark); font: inherit; font-weight: 750; text-decoration: underline; text-underline-offset: .3em; cursor: pointer; } .ds-question button:hover { color: var(--pitch); } .ds-question button:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; } .ds-question__answer { max-width: 74ch; margin-top: 17px; padding: 18px 20px; border-radius: 10px; background: #e5eee6; } .ds-question__answer p { margin: 0; color: #284132; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Analyst's Annotated Match Sheet",
+    "overview": "Marpunten voelt als het wedstrijdvel waarop een trainer patronen aanwijst, groei noteert en de volgende actie klaarzet. Donker inktgroen geeft richting en autoriteit; warm krijtpapier houdt de werkomgeving menselijk; dunne regels, veldgeometrie en compacte scoretypografie maken de interface tactisch zonder decoratief voetbaltheater.\n\nDe density is bewust geaard (grounded index 6): royaal rond het ene belangrijke periode- of groeisignaal, compact waar een coach lijsten scant of corrigeert. Het systeem weigert een generiek SaaS-dashboard, competitie-esthetiek en glanzende gamification; Groeiwaarde blijft een persoonlijk ontwikkelsignaal, nooit een ranglijst.",
+    "keyCharacteristics": [
+      "Een donkere coachrail naast een ruim, warm papieren speelvlak.",
+      "Condensed scoretypografie voor koppen, bedragen en periodegetallen.",
+      "Haarlijndunne tactische regels en veldcirkels in plaats van decoratieve kaartenstapels.",
+      "Veldgroen voor voortgang en acties; geel alleen voor betekenisvolle status en focus.",
+      "Eén duidelijke volgende ontwikkelactie per werkcontext."
+    ],
+    "rules": [
+      { "name": "The Yellow Means State Rule", "body": "Geel is nooit een algemene accentkleur; elk geel element moet een concrete status, selectie of focusbetekenis hebben.", "section": "colors" },
+      { "name": "The Paper Is the Canvas Rule", "body": "Laat het warme papier zichtbaar tussen onderdelen; vul het scherm niet met losse witte kaarten.", "section": "colors" },
+      { "name": "The Scoreboard Contrast Rule", "body": "Gebruik condensed type voor grote signalen en namen, niet voor lopende uitleg; de spanning met de open bodyfont is onderdeel van de identiteit.", "section": "typography" },
+      { "name": "The Numbers Stay Still Rule", "body": "Groeiwaarde, ordenummers en credentials gebruiken tabulaire of monospace cijfers zodat correcties niet visueel verspringen.", "section": "typography" },
+      { "name": "The One Playing Surface Rule", "body": "Een pagina is één doorlopend speelvlak met regels en secties; alleen informatie met een eigen toestand of interactie krijgt een omkaderde container.", "section": "layout" },
+      { "name": "The Flat-by-Default Rule", "body": "Voeg geen ambient kaartschaduwen toe; hiërarchie komt uit veldkleur, regels, schaal en tussenruimte.", "section": "elevation" },
+      { "name": "The Tactical Geometry Rule", "body": "Iedere cirkel, lijn of capsule moet een veld-, status- of interactiefunctie dragen; gebruik geometrie niet als willekeurig ornament.", "section": "shapes" }
+    ],
+    "dos": [
+      "**Do** laat één groot periode- of groeisignaal de eerste viewport domineren.",
+      "**Do** gebruik haarlijnen, rijstructuur en tussenruimte om verwante informatie te organiseren.",
+      "**Do** zet de primaire, groene actie naast de titel of het leeritem waarop die actie werkt.",
+      "**Do** behoud zichtbare focus, 44px aanraakdoelen, 320px ondersteuning en reduced-motion gedrag.",
+      "**Do** schrijf Groeiwaarde altijd als persoonlijk progressiesignaal en ondersteun dat visueel zonder competitiehiërarchie."
+    ],
+    "donts": [
+      "**Don't** verander Marpunten in een generiek SaaS-dashboard met zwevende witte kaarten, blauwe accenten of KPI-tegels.",
+      "**Don't** gebruik geel als decoratie, merkaccent of gewone CTA-kleur.",
+      "**Don't** voeg decoratieve kleurgradients, glans, zware schaduwen of nagebootste papiertextuur toe; subtiele lijn- en veldgrids blijven functioneel.",
+      "**Don't** maak Groeiwaarde tot een badge, sterrenscore, podium of visuele ranglijst.",
+      "**Don't** publiceer QA-screenshots of andere rasterbeelden als onderdeel van de interface; de productie-uitstraling is code-, type- en SVG-gedreven."
+    ]
+  }
+}
