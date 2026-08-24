@@ -2,6 +2,7 @@ import type {
   AdminDashboardData,
   AdminPlayerDetail,
   AdminPlayerRow,
+  ConvertLearningItemInput,
   CreatePlayerInput,
   MediaInput,
   MyDashboardData,
@@ -100,13 +101,16 @@ export function demoMyDashboard(): MyDashboardData {
 }
 
 export function demoAdminPlayers() {
-  return [...players].sort((a, b) => Number(b.active) - Number(a.active) || (a.shirtNumber ?? 999) - (b.shirtNumber ?? 999))
+  return players
+    .map((player) => ({ ...player, totalPoints: progress.filter((item) => item.playerId === player.id).reduce((sum, item) => sum + item.points, 0) }))
+    .sort((a, b) => Number(b.active) - Number(a.active) || (a.shirtNumber ?? 999) - (b.shirtNumber ?? 999))
 }
 
 export function demoAdminPlayer(playerId: string): AdminPlayerDetail {
   const player = players.find((item) => item.id === playerId)
   if (!player) throw new Error('Speler niet gevonden.')
-  return { ...player, progress: progress.filter((item) => item.playerId === playerId), questions: questions.filter((item) => item.playerId === playerId), media: media.filter((item) => item.playerId === playerId) }
+  const playerProgress = progress.filter((item) => item.playerId === playerId)
+  return { ...player, totalPoints: playerProgress.reduce((sum, item) => sum + item.points, 0), progress: playerProgress, questions: questions.filter((item) => item.playerId === playerId), media: media.filter((item) => item.playerId === playerId) }
 }
 
 export function demoAdminDashboard(): AdminDashboardData {
@@ -165,6 +169,13 @@ export function demoSaveQuestion(playerId: string, input: QuestionInput, id?: st
   else questions.push({ id: crypto.randomUUID(), playerId, ...input, periodId: input.periodId ?? null, periodName, category: input.category ?? null, sortOrder: input.sortOrder ?? 1, createdAt: new Date().toISOString() })
 }
 export function demoDeleteQuestion(id: string) { questions = questions.filter((item) => item.id !== id) }
+export function demoConvertLearningItem(input: ConvertLearningItemInput) {
+  const { learningItemId, ...progressInput } = input
+  const learningItem = questions.find((item) => item.id === learningItemId)
+  if (!learningItem) throw new Error('Dit leeritem bestaat niet meer.')
+  demoSaveProgress(learningItem.playerId, progressInput)
+  questions = questions.filter((item) => item.id !== learningItemId)
+}
 export function demoSaveMedia(playerId: string, input: MediaInput, id?: string) {
   const periodName = periods.find((item) => item.id === input.periodId)?.name ?? null
   const mediaType = getYouTubeId(input.url) ? 'youtube' : 'link'

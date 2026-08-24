@@ -2,6 +2,7 @@ import type {
   AdminDashboardData,
   AdminPlayerDetail,
   AdminPlayerRow,
+  ConvertLearningItemInput,
   CreatePlayerInput,
   MediaInput,
   MyDashboardData,
@@ -22,6 +23,7 @@ import {
   demoAdminPlayers,
   demoCreatePeriod,
   demoCreatePlayer,
+  demoConvertLearningItem,
   demoDeleteMedia,
   demoDeletePeriod,
   demoDeleteProgress,
@@ -350,6 +352,18 @@ export async function saveQuestion(playerId: string, input: QuestionInput, id?: 
 export async function deleteQuestion(id: string) {
   if (isDemoMode) return demoDeleteQuestion(id)
   const { error } = await requireSupabase().from('player_questions').delete().eq('id', id)
+  if (error) throw error
+}
+
+export async function convertLearningItemToProgress(input: ConvertLearningItemInput) {
+  if (isDemoMode) return demoConvertLearningItem(input)
+  const { error } = await requireSupabase().rpc('convert_learning_item_to_progress', {
+    learning_item_id: input.learningItemId,
+    target_period_id: input.periodId,
+    progress_points: input.points,
+    progress_title: input.title.trim(),
+    progress_description: input.description?.trim() || null,
+  })
   if (error) throw error
 }
 

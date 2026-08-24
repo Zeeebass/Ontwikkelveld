@@ -1,7 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
-import { ArrowLeft, Check, Copy, ImagePlus, KeyRound, Pencil, Plus, Power, Trash2, X } from 'lucide-react'
-import { useEffect, useState, type ChangeEvent } from 'react'
+import { ArrowLeft, Check, Copy, ImagePlus, KeyRound, Pencil, Plus, Power, Trash2, TrendingUp, X } from 'lucide-react'
+import { Fragment, useEffect, useState, type ChangeEvent } from 'react'
 import { useForm } from 'react-hook-form'
 import { Link, useParams } from 'react-router-dom'
 import { z } from 'zod'
@@ -9,13 +9,13 @@ import { GrowthValue } from '../../components/GrowthValue'
 import { PlayerAvatar } from '../../components/PlayerAvatar'
 import { EmptyState, ErrorState, LoadingState } from '../../components/QueryState'
 import {
-  deleteMedia, deleteProgress, deleteQuestion, getAdminPlayer, getPeriods, resetPlayerPassword,
+  convertLearningItemToProgress, deleteMedia, deleteProgress, deleteQuestion, getAdminPlayer, getPeriods, resetPlayerPassword,
   saveMedia, saveProgress, saveQuestion, setPlayerActive, updatePlayerProfile, uploadPlayerAvatar,
 } from '../../lib/api'
 import { getErrorMessage } from '../../lib/errors'
 import { formatDate } from '../../lib/format'
 import { isSafeExternalUrl } from '../../lib/youtube'
-import type { AdminPlayerDetail, MediaInput, Period, PlayerMedia, PlayerQuestion, ProgressEntry, ProgressInput, QuestionInput } from '../../types/app'
+import type { AdminPlayerDetail, ConvertLearningItemInput, MediaInput, Period, PlayerMedia, PlayerQuestion, ProgressEntry, ProgressInput, QuestionInput } from '../../types/app'
 
 const optionalNumber = z.number().int().min(1).max(99).optional()
 const profileSchema = z.object({ firstName: z.string().trim().min(1, 'Voornaam is verplicht.'), lastName: z.string().trim().min(1, 'Achternaam is verplicht.'), position: z.string().trim().max(40).optional(), shirtNumber: optionalNumber })
@@ -24,7 +24,7 @@ type ProfileValues = z.infer<typeof profileSchema>
 const progressSchema = z.object({ periodId: z.string().uuid('Kies een periode.'), points: z.coerce.number().int().positive('Gebruik een positief aantal.'), title: z.string().trim().min(1, 'Titel is verplicht.').max(120), description: z.string().trim().max(2000).optional() })
 type ProgressValues = z.infer<typeof progressSchema>
 
-const questionSchema = z.object({ periodId: z.string().optional(), question: z.string().trim().min(1, 'Vraag of onderwerp is verplicht.').max(500), answer: z.string().trim().min(1, 'Antwoord of uitleg is verplicht.').max(4000), category: z.string().trim().max(60).optional() })
+const questionSchema = z.object({ periodId: z.string().optional(), question: z.string().trim().min(1, 'Leeritem is verplicht.').max(500), answer: z.string().trim().min(1, 'Toelichting is verplicht.').max(4000), category: z.string().trim().max(60).optional() })
 type QuestionValues = z.infer<typeof questionSchema>
 
 const mediaSchema = z.object({ periodId: z.string().optional(), title: z.string().trim().min(1, 'Titel is verplicht.').max(120), url: z.string().trim().refine(isSafeExternalUrl, 'Gebruik een geldige http- of https-link.'), description: z.string().trim().max(2000).optional() })
@@ -58,7 +58,39 @@ function QuestionEditor({ playerId, periods, item, onClose }: { playerId: string
   const { register, handleSubmit, reset, formState: { errors } } = useForm<QuestionValues>({ resolver: zodResolver(questionSchema), defaultValues: { periodId: item?.periodId ?? '', question: item?.question ?? '', answer: item?.answer ?? '', category: item?.category ?? '' } })
   useEffect(() => reset({ periodId: item?.periodId ?? '', question: item?.question ?? '', answer: item?.answer ?? '', category: item?.category ?? '' }), [item, reset])
   const mutation = useMutation({ mutationFn: (values: QuestionValues) => saveQuestion(playerId, { ...values, periodId: values.periodId || null } as QuestionInput, item?.id), onSuccess: () => { invalidatePlayer(queryClient, playerId); onClose() } })
-  return <form className="entry-form" onSubmit={handleSubmit((values) => mutation.mutate(values))}><div className="entry-form__top"><h3>{item ? 'Leeritem bewerken' : 'Leeritem toevoegen'}</h3><button className="icon-button" type="button" onClick={onClose} aria-label="Formulier sluiten"><X /></button></div><div className="form-grid"><label className="field-label">Periode<select {...register('periodId')}><option value="">Altijd relevant</option>{periods.map((period) => <option key={period.id} value={period.id}>{period.name}</option>)}</select></label><label className="field-label">Categorie<input {...register('category')} placeholder="Bijv. Tactisch" /></label><label className="field-label form-grid__wide">Vraag of onderwerp<textarea rows={2} {...register('question')} />{errors.question && <span className="field-error">{errors.question.message}</span>}</label><label className="field-label form-grid__wide">Antwoord of uitleg<textarea rows={4} {...register('answer')} />{errors.answer && <span className="field-error">{errors.answer.message}</span>}</label></div>{mutation.error && <div className="notice notice--error">{getErrorMessage(mutation.error)}</div>}<button className="button button--primary" disabled={mutation.isPending}>{mutation.isPending ? 'Opslaan…' : 'Leeritem opslaan'}</button></form>
+  return <form className="entry-form" onSubmit={handleSubmit((values) => mutation.mutate(values))}><div className="entry-form__top"><h3>{item ? 'Leeritem bewerken' : 'Leeritem toevoegen'}</h3><button className="icon-button" type="button" onClick={onClose} aria-label="Formulier sluiten"><X /></button></div><div className="form-grid"><label className="field-label">Periode<select {...register('periodId')}><option value="">Altijd relevant</option>{periods.map((period) => <option key={period.id} value={period.id}>{period.name}</option>)}</select></label><label className="field-label">Categorie<input {...register('category')} placeholder="Bijv. Tactisch" /></label><label className="field-label form-grid__wide">Leeritem<textarea rows={2} {...register('question')} />{errors.question && <span className="field-error">{errors.question.message}</span>}</label><label className="field-label form-grid__wide">Toelichting<textarea rows={4} {...register('answer')} />{errors.answer && <span className="field-error">{errors.answer.message}</span>}</label></div>{mutation.error && <div className="notice notice--error">{getErrorMessage(mutation.error)}</div>}<button className="button button--primary" disabled={mutation.isPending}>{mutation.isPending ? 'Opslaan…' : 'Leeritem opslaan'}</button></form>
+}
+
+function LearningItemConversionEditor({ periods, item, onClose }: { periods: Period[]; item: PlayerQuestion; onClose: () => void }) {
+  const queryClient = useQueryClient()
+  const current = periods.find((period) => period.isCurrent)
+  const defaults: ProgressValues = {
+    periodId: item.periodId ?? current?.id ?? '',
+    points: 100,
+    title: item.question.slice(0, 120),
+    description: item.answer.slice(0, 2000),
+  }
+  const { register, handleSubmit, formState: { errors } } = useForm<ProgressValues>({ resolver: zodResolver(progressSchema), defaultValues: defaults })
+  const mutation = useMutation({
+    mutationFn: (values: ProgressValues) => convertLearningItemToProgress({ ...values, learningItemId: item.id } as ConvertLearningItemInput),
+    onSuccess: () => { invalidatePlayer(queryClient, item.playerId); onClose() },
+  })
+  return (
+    <form className="entry-form conversion-form" onSubmit={handleSubmit((values) => mutation.mutate(values))}>
+      <div className="entry-form__top">
+        <div><h3>Leeritem omzetten naar progressie</h3><p>Na opslaan verdwijnt dit leeritem en telt het moment mee in de Groeiwaarde.</p></div>
+        <button className="icon-button" type="button" onClick={onClose} aria-label="Omzetten annuleren"><X /></button>
+      </div>
+      <div className="form-grid">
+        <label className="field-label">Periode<select {...register('periodId')}><option value="">Kies periode</option>{periods.map((period) => <option key={period.id} value={period.id}>{period.name}{period.isCurrent ? ' — huidig' : ''}</option>)}</select>{errors.periodId && <span className="field-error">{errors.periodId.message}</span>}</label>
+        <label className="field-label">Punten<input type="number" min="1" {...register('points')} />{errors.points && <span className="field-error">{errors.points.message}</span>}</label>
+        <label className="field-label form-grid__wide">Progressietitel<input {...register('title')} />{errors.title && <span className="field-error">{errors.title.message}</span>}</label>
+        <label className="field-label form-grid__wide">Omschrijving<textarea rows={3} {...register('description')} /></label>
+      </div>
+      {mutation.error && <div className="notice notice--error" role="alert">{getErrorMessage(mutation.error)}</div>}
+      <div className="button-row"><button className="button button--primary" disabled={mutation.isPending}>{mutation.isPending ? 'Omzetten…' : 'Omzetten naar progressie'}</button><button className="button button--secondary" type="button" onClick={onClose}>Annuleren</button></div>
+    </form>
+  )
 }
 
 function MediaEditor({ playerId, periods, item, onClose }: { playerId: string; periods: Period[]; item: PlayerMedia | null; onClose: () => void }) {
@@ -79,6 +111,7 @@ export function AdminPlayerPage() {
   const [copied, setCopied] = useState(false)
   const [progressEditor, setProgressEditor] = useState<ProgressEntry | 'new' | null>(null)
   const [questionEditor, setQuestionEditor] = useState<PlayerQuestion | 'new' | null>(null)
+  const [conversionItem, setConversionItem] = useState<PlayerQuestion | null>(null)
   const [mediaEditor, setMediaEditor] = useState<PlayerMedia | 'new' | null>(null)
   const [actionError, setActionError] = useState<string | null>(null)
   const refresh = () => invalidatePlayer(queryClient, id)
@@ -107,7 +140,7 @@ export function AdminPlayerPage() {
 
       <section className="dossier-section"><header><div><h2>Progressie</h2><p>Losse ontwikkelmomenten die optellen tot de Groeiwaarde.</p></div><button className="button button--primary button--small" type="button" onClick={() => setProgressEditor('new')}><Plus /> Progressie</button></header>{progressEditor && <ProgressEditor playerId={id} periods={periods} item={progressEditor === 'new' ? null : progressEditor} onClose={() => setProgressEditor(null)} />}{player.progress.length ? <div className="admin-entry-list">{player.progress.map((item) => <article key={item.id}><div className="admin-entry-list__date">{formatDate(item.createdAt)}</div><div><h3>{item.title}</h3><p>{item.periodName}{item.description ? ` · ${item.description}` : ''}</p></div><GrowthValue points={item.points} size="small" /><div className="row-actions"><button className="icon-button" type="button" onClick={() => setProgressEditor(item)} aria-label={`${item.title} bewerken`}><Pencil /></button><button className="icon-button icon-button--danger" type="button" onClick={() => { if (window.confirm(`“${item.title}” verwijderen?`)) deleteMutation.mutate({ type: 'progress', itemId: item.id }) }} aria-label={`${item.title} verwijderen`}><Trash2 /></button></div></article>)}</div> : <EmptyState title="Nog geen progressie" description="Voeg het eerste ontwikkelmoment toe." />}</section>
 
-      <section className="dossier-section"><header><div><h2>Vragen & antwoorden</h2><p>Persoonlijke aandachtspunten, instructies en reflectievragen.</p></div><button className="button button--primary button--small" type="button" onClick={() => setQuestionEditor('new')}><Plus /> Leeritem</button></header>{questionEditor && <QuestionEditor playerId={id} periods={periods} item={questionEditor === 'new' ? null : questionEditor} onClose={() => setQuestionEditor(null)} />}{player.questions.length ? <div className="admin-entry-list admin-entry-list--text">{player.questions.map((item) => <article key={item.id}><div><div className="content-meta"><span>{item.category || 'Persoonlijk'}</span><span>{item.periodName || 'Altijd relevant'}</span></div><h3>{item.question}</h3><p>{item.answer}</p></div><div className="row-actions"><button className="icon-button" type="button" onClick={() => setQuestionEditor(item)} aria-label="Leeritem bewerken"><Pencil /></button><button className="icon-button icon-button--danger" type="button" onClick={() => { if (window.confirm('Dit leeritem verwijderen?')) deleteMutation.mutate({ type: 'question', itemId: item.id }) }} aria-label="Leeritem verwijderen"><Trash2 /></button></div></article>)}</div> : <EmptyState title="Nog geen leeritems" description="Voeg een vraag, uitleg of persoonlijk aandachtspunt toe." />}</section>
+      <section className="dossier-section"><header><div><h2>Leeritems</h2><p>Persoonlijke aandachtspunten met een concrete toelichting voor de speler.</p></div><button className="button button--primary button--small" type="button" onClick={() => { setConversionItem(null); setQuestionEditor('new') }}><Plus /> Leeritem</button></header>{questionEditor && <QuestionEditor playerId={id} periods={periods} item={questionEditor === 'new' ? null : questionEditor} onClose={() => setQuestionEditor(null)} />}{player.questions.length ? <div className="admin-entry-list admin-entry-list--text admin-entry-list--learning">{player.questions.map((item) => <Fragment key={item.id}><article><div><div className="content-meta"><span>{item.category || 'Persoonlijk'}</span><span>{item.periodName || 'Altijd relevant'}</span></div><h3>{item.question}</h3><p>{item.answer}</p></div><div className="learning-item-actions"><button className="button button--secondary button--small" type="button" onClick={() => { setQuestionEditor(null); setConversionItem(item) }}><TrendingUp /> Naar progressie</button><button className="icon-button" type="button" onClick={() => { setConversionItem(null); setQuestionEditor(item) }} aria-label={`${item.question} bewerken`}><Pencil /></button><button className="icon-button icon-button--danger" type="button" onClick={() => { if (window.confirm('Dit leeritem verwijderen?')) deleteMutation.mutate({ type: 'question', itemId: item.id }) }} aria-label={`${item.question} verwijderen`}><Trash2 /></button></div></article>{conversionItem?.id === item.id && <LearningItemConversionEditor periods={periods} item={item} onClose={() => setConversionItem(null)} />}</Fragment>)}</div> : <EmptyState title="Nog geen leeritems" description="Voeg een persoonlijk aandachtspunt met toelichting toe." />}</section>
 
       <section className="dossier-section"><header><div><h2>Video's & materiaal</h2><p>YouTube-fragmenten worden ingebed; andere links openen veilig extern.</p></div><button className="button button--primary button--small" type="button" onClick={() => setMediaEditor('new')}><Plus /> Materiaal</button></header>{mediaEditor && <MediaEditor playerId={id} periods={periods} item={mediaEditor === 'new' ? null : mediaEditor} onClose={() => setMediaEditor(null)} />}{player.media.length ? <div className="admin-entry-list admin-entry-list--text">{player.media.map((item) => <article key={item.id}><div><div className="content-meta"><span>{item.mediaType === 'youtube' ? 'YouTube' : 'Link'}</span><span>{item.periodName || 'Altijd relevant'}</span></div><h3>{item.title}</h3><p>{item.description || item.url}</p></div><div className="row-actions"><button className="icon-button" type="button" onClick={() => setMediaEditor(item)} aria-label={`${item.title} bewerken`}><Pencil /></button><button className="icon-button icon-button--danger" type="button" onClick={() => { if (window.confirm(`“${item.title}” verwijderen?`)) deleteMutation.mutate({ type: 'media', itemId: item.id }) }} aria-label={`${item.title} verwijderen`}><Trash2 /></button></div></article>)}</div> : <EmptyState title="Nog geen materiaal" description="Voeg een YouTube-video of externe link toe." />}</section>
     </div>

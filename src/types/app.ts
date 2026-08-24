@@ -122,4 +122,5 @@ export type PlayerProfileInput = {
 export type CreatePlayerInput = PlayerProfileInput & { loginName: string }
 export type ProgressInput = { periodId: string; points: number; title: string; description?: string | null }
 export type QuestionInput = { periodId?: string | null; question: string; answer: string; category?: string | null; sortOrder?: number }
+export type ConvertLearningItemInput = ProgressInput & { learningItemId: string }
 export type MediaInput = { periodId?: string | null; title: string; description?: string | null; url: string; mediaType: MediaType; sortOrder?: number }

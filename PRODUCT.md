@@ -32,7 +32,8 @@ Eén voetbalteam gebruikt de website gedurende vrij benoembare trainings- of com
 - Rollen zijn `admin` en `player`; er is één initiële admin en één team.
 - Login gebruikt een unieke loginnaam en een admin-beheerd wachtwoord, zonder publieke registratie of e-mailflow.
 - Groeiwaarde wordt als gehele positieve punten opgeslagen; 100 punten wordt als €100K weergegeven.
-- Teamgenoten zien openbare profielvelden en totalen, maar nooit andermans progressieomschrijvingen, vragen, antwoorden of media.
+- Een admin kan een behaald leeritem atomair omzetten naar progressie; het leeritem verdwijnt pas wanneer de progressie is opgeslagen.
+- Teamgenoten zien openbare profielvelden en totalen, maar nooit andermans progressieomschrijvingen, leeritems of media.
 - Perioden hebben een naam, volgorde en huidige status, zonder datums of vergrendeling.
 - Spelers worden gedeactiveerd, niet permanent verwijderd.
 - De MVP bevat geen ranking, chat, notificaties, AI-feedback, badges, aanwezigheid, kalender of wedstrijdstatistieken.

@@ -258,7 +258,7 @@ Groeiwaarde is het signature signal: groot condensed type, tabulaire cijfers en 
 
 ### States & Annotated Content
 
-Lege toestanden gebruiken een gestippelde omranding op transparant Chalk; fouten schakelen naar Correction Red; laden blijft visueel stil op de huidige ondergrond. Vragen zijn door regels gescheiden en openen hun antwoord in een zacht groen notitievlak. Media combineert een donker tactisch videovlak met een rustig tekstdeel en behoudt de 14px match-sheet contour.
+Lege toestanden gebruiken een gestippelde omranding op transparant Chalk; fouten schakelen naar Correction Red; laden blijft visueel stil op de huidige ondergrond. Leeritems zijn door regels gescheiden en tonen hun toelichting direct, zonder verborgen antwoordinteractie. Media combineert een donker tactisch videovlak met een rustig tekstdeel en behoudt de 14px match-sheet contour.
 
 ## Do's and Don'ts
 

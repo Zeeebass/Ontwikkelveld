@@ -21,6 +21,10 @@ export type Database = {
       get_team_growth_summary: { Args: Record<PropertyKey, never>; Returns: Array<{ current_period_id: string | null; current_period_name: string | null; player_id: string; first_name: string; last_name: string; position: string | null; shirt_number: number | null; avatar_path: string | null; current_points: number; total_points: number }> }
       create_period_and_make_current: { Args: { period_name: string }; Returns: Database['public']['Tables']['periods']['Row'] }
       set_current_period: { Args: { target_period_id: string }; Returns: Database['public']['Tables']['periods']['Row'] }
+      convert_learning_item_to_progress: {
+        Args: { learning_item_id: string; target_period_id: string; progress_points: number; progress_title: string; progress_description: string | null }
+        Returns: Database['public']['Tables']['progress_entries']['Row']
+      }
     }
     Enums: { app_role: AppRole; media_type: MediaType }
     CompositeTypes: Record<string, never>

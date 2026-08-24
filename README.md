@@ -75,7 +75,7 @@ Omdat `HashRouter` wordt gebruikt, blijven refreshes op routes zoals `#/admin/pl
 
 - De frontend bevat alleen de publishable Supabase key; bescherming komt uit grants en Row Level Security.
 - `get_team_growth_summary()` geeft alleen openbare profielvelden en geaggregeerde Groeiwaarde terug.
-- Persoonlijke progressieregels, vragen en media zijn alleen selecteerbaar door de speler zelf en admins.
+- Persoonlijke progressieregels, leeritems en media zijn alleen selecteerbaar door de speler zelf en admins.
 - Spelersfoto's staan in een private bucket en zijn alleen voor actieve teamleden leesbaar.
 - Accountaanmaak, wachtwoordreset en ban/unban gebruiken server-side adminrechten in `admin-users`.
 - Loginwachtwoorden worden nooit in de database bewaard of gelogd en zijn na genereren slechts één keer zichtbaar.

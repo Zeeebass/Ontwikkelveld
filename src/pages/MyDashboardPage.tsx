@@ -1,9 +1,9 @@
 import { useQuery } from '@tanstack/react-query'
-import { Film, MessageCircleQuestion, TrendingUp } from 'lucide-react'
+import { BookOpenCheck, Film, TrendingUp } from 'lucide-react'
 import { GrowthValue } from '../components/GrowthValue'
 import { MediaCard } from '../components/MediaCard'
 import { PageHeader } from '../components/PageHeader'
-import { QuestionCard } from '../components/QuestionCard'
+import { LearningItemCard } from '../components/LearningItemCard'
 import { EmptyState, ErrorState, LoadingState } from '../components/QueryState'
 import { getMyDashboard } from '../lib/api'
 import { formatDate } from '../lib/format'
@@ -28,8 +28,8 @@ export function MyDashboardPage() {
       </section>
 
       <section className="content-section" id="leeritems">
-        <div className="section-heading"><MessageCircleQuestion aria-hidden="true" /><div><h2>Mijn leeritems</h2><p>Denk eerst zelf na en klap daarna het antwoord open.</p></div></div>
-        {data.questions.length ? <div className="question-list">{data.questions.map((item) => <QuestionCard key={item.id} item={item} />)}</div> : <EmptyState title="Nog geen leeritems" description="Nieuwe vragen en coachingtips verschijnen hier." />}
+        <div className="section-heading"><BookOpenCheck aria-hidden="true" /><div><h2>Mijn leeritems</h2><p>Jouw aandachtspunten met de toelichting van je trainer.</p></div></div>
+        {data.questions.length ? <div className="learning-item-list">{data.questions.map((item) => <LearningItemCard key={item.id} item={item} />)}</div> : <EmptyState title="Nog geen leeritems" description="Nieuwe persoonlijke aandachtspunten verschijnen hier." />}
       </section>
 
       <section className="content-section" id="media">
