@@ -6,7 +6,7 @@ const executablePath = process.platform === 'win32'
   ? 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe'
   : undefined
 const browser = await chromium.launch({ headless: true, executablePath })
-const baseURL = 'http://127.0.0.1:5173/marpunten/'
+const baseURL = 'http://127.0.0.1:5173/Ontwikkelveld/'
 const reviewDir = new URL('../.impeccable/review/', import.meta.url)
 await mkdir(reviewDir, { recursive: true })
 const reviewPath = (name) => fileURLToPath(new URL(name, reviewDir))

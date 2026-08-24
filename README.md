@@ -34,7 +34,7 @@ npx supabase secrets set APP_ORIGINS=https://GITHUB_GEBRUIKER.github.io
 ```
 
 3. Open Authentication → Providers → Email en schakel publieke signup uit. Stel de minimale wachtwoordlengte in op 12 en vereis kleine letters, hoofdletters, cijfers en symbolen.
-4. Zet Authentication → URL Configuration → Site URL op `https://GITHUB_GEBRUIKER.github.io/marpunten/`.
+4. Zet Authentication → URL Configuration → Site URL op `https://Zeeebass.github.io/Ontwikkelveld/`.
 5. De secret/service-role key blijft alleen in Supabase. Zet deze nooit in `.env.local` of GitHub.
 
 ### Eerste admin maken
@@ -61,13 +61,13 @@ De database-tests controleren schema, RLS en beveiligde functies. De browsertest
 
 ## Online zetten met GitHub Pages
 
-1. Maak een publieke repository met de naam `marpunten`, commit alle bestanden en push naar `main`.
+1. De broncode staat in de publieke repository `Zeeebass/Ontwikkelveld`; push wijzigingen naar `main`.
 2. Voeg onder Settings → Secrets and variables → Actions → Variables toe:
    - `VITE_SUPABASE_URL`
    - `VITE_SUPABASE_PUBLISHABLE_KEY`
 3. Kies Settings → Pages → Source → GitHub Actions.
 4. De workflow `.github/workflows/deploy.yml` lint, test en bouwt iedere push naar `main`, en publiceert daarna `dist`.
-5. Controleer `https://GITHUB_GEBRUIKER.github.io/marpunten/` en test zowel een admin- als spelersaccount.
+5. Controleer `https://Zeeebass.github.io/Ontwikkelveld/` en test zowel een admin- als spelersaccount.
 
 Omdat `HashRouter` wordt gebruikt, blijven refreshes op routes zoals `#/admin/players` betrouwbaar op GitHub Pages.
 
